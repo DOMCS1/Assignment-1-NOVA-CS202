@@ -1,5 +1,6 @@
 package SignUp;
 
+import SignUp.Assignment2.IndexedList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,7 +11,6 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.util.ArrayList;
 
 public class Controller {
 
@@ -37,7 +37,8 @@ public class Controller {
     private Label profilePhone;*/
     private File pfp;
 
-    private static ArrayList<User> users = new ArrayList();
+    private static IndexedList<User> users = new IndexedList();
+    //private static ArrayList<User> users = new ArrayList();
 
     public void signup() throws Exception
     {
@@ -129,9 +130,9 @@ public class Controller {
                     //CurrentUser test = new CurrentUser(users.get(j));
                     System.out.print(users.get(j));
                     Stage primaryStage = new Stage();
-                    Parent root = FXMLLoader.load(getClass().getResource("/SignUp/Profile.fxml"));
-                    primaryStage.setTitle("Profile View");
-                    primaryStage.setScene(new Scene(root, 800, 800));
+                    Parent root = FXMLLoader.load(getClass().getResource("/SignUp/Assignment3/RestaurantView.fxml"));
+                    primaryStage.setTitle("Restaurant View");
+                    primaryStage.setScene(new Scene(root, 900, 800));
                     primaryStage.show();
 
 
