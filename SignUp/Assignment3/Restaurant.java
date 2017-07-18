@@ -91,12 +91,8 @@ public class Restaurant implements Comparable {
     }
 
     public String getPhone() {
-       String toreturn = phone.charAt(0) + phone.substring(2, phone.length()-2);
-       while (phone.length()<10)
-       {
-           toreturn = toreturn + "0";
-       }
-       return toreturn;
+       return phone.charAt(0) + phone.substring(2, phone.length()-2);
+
     }
 
 
