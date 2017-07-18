@@ -65,6 +65,13 @@ public class RestaurantController implements Initializable {
         table.getColumns().setAll(nameCol, addressCol, cityCol, stateCol, zipCol, latCol, longCol, phoneCol, imageCol);
     }
 
+<<<<<<< HEAD
+=======
+    @FXML
+    private void handleEnterPressed() {
+        search();
+    }
+>>>>>>> d0f82d39270e260a359e0e605ff6bdde18b6008b
 
     @FXML
     private void search(){
@@ -78,6 +85,7 @@ public class RestaurantController implements Initializable {
             RestaurantResults(keyword.getText());
         }
     }
+<<<<<<< HEAD
     
     private void RestaurantResults(String keyword){
 
@@ -92,6 +100,16 @@ public class RestaurantController implements Initializable {
         data = RestaurantList.extractValues(n);
 
 
+=======
+    private void RestaurantResults(String keyword) {
+
+        ObservableList<Restaurant> restaurantResults = FXCollections.observableArrayList();
+        restaurantResults.clear();
+        ArrayList<Restaurant> data;
+        BSTNode n = null;
+        data = RestaurantList.extractValues(n);
+
+>>>>>>> d0f82d39270e260a359e0e605ff6bdde18b6008b
         for(int i = 0; i < data.size(); i++)
         {
             Restaurant temp = data.get(i);
@@ -99,7 +117,11 @@ public class RestaurantController implements Initializable {
             {
                 restaurantResults.add(temp);
             }
+<<<<<<< HEAD
            else if (temp.getAddress().contains(keyword))
+=======
+            else if (temp.getAddress().contains(keyword))
+>>>>>>> d0f82d39270e260a359e0e605ff6bdde18b6008b
             {
                 restaurantResults.add(temp);
             }
@@ -165,6 +187,7 @@ public class RestaurantController implements Initializable {
             list = (List) restaurantList.get(7);
 
             restaurant.setPhone(String.valueOf(list.get(row)));
+<<<<<<< HEAD
             // = (List) restaurantList.get(8);
 
 //            try {
@@ -172,6 +195,15 @@ public class RestaurantController implements Initializable {
 //            } catch (IOException e) {
 //                e.printStackTrace();
 //            }
+=======
+            list = (List) restaurantList.get(8);
+
+            try {
+                restaurant.setLogo(String.valueOf(list.get(row)));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+>>>>>>> d0f82d39270e260a359e0e605ff6bdde18b6008b
             restaurantData.add(restaurant);
             RestaurantList.add(restaurant);
         }

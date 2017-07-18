@@ -91,8 +91,17 @@ public class Restaurant implements Comparable {
     }
 
     public String getPhone() {
+<<<<<<< HEAD
        return phone.charAt(0) + phone.substring(2, phone.length()-2);
 
+=======
+       String toreturn = phone.charAt(0) + phone.substring(2, phone.length()-2);
+       while (phone.length()<10)
+       {
+           toreturn = toreturn + "0";
+       }
+       return toreturn;
+>>>>>>> d0f82d39270e260a359e0e605ff6bdde18b6008b
     }
 
 

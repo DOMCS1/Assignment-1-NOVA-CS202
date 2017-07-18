@@ -51,7 +51,11 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
+<<<<<<< HEAD
                         <TextField fx:id="keyword" onKeyReleased="#search" prefHeight="51.0" prefWidth="373.0" GridPane.columnIndex="0" />
+=======
+                        <TextField fx:id="keyword" onKeyReleased="#handleEnterPressed" prefHeight="51.0" prefWidth="373.0" GridPane.columnIndex="0" />
+>>>>>>> d0f82d39270e260a359e0e605ff6bdde18b6008b
                   <Button fx:id="searchButton" alignment="CENTER" mnemonicParsing="false" onAction="#search" prefHeight="51.0" prefWidth="120.0" text="Search" textAlignment="CENTER" GridPane.columnIndex="1" />
                     </children>
                 </GridPane>
