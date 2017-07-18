@@ -14,12 +14,12 @@ public class CurrentUser {
 
     public CurrentUser(User current)
     {
-        this.fullname = current.getFullName();
-        this.username = current.getUsername();
-        this.email = current.getEmail();
-        this.date = current.getDate();
-        this.gender = current.getGender();
-        this.phone = current.getPhone();
+        fullname = current.getFullName();
+        username = current.getUsername();
+        email = current.getEmail();
+        date = current.getDate();
+        gender = current.getGender();
+        phone = current.getPhone();
 
     }
 

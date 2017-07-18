@@ -5,7 +5,7 @@ import java.io.File;
 /**
  * Created by Pratyush Gupta on 5/31/2017.
  */
-public class User extends Person {
+public class User extends Person implements Comparable<User>  {
 
     private String username;
     private String email;
@@ -65,6 +65,21 @@ public class User extends Person {
 
     public int compareTo(User compared)
     {
+        int comparedInt;
+
+        comparedInt = getGender().compareTo(compared.getGender());
+        if(comparedInt!=0)
+        {
+            return comparedInt;
+        }
+        comparedInt = getDate().compareTo(compared.getDate());
+        if(comparedInt!=0)
+        {
+            return comparedInt;
+        }
+
         return  this.username.compareTo(compared.username);
     }
+
+
 }
