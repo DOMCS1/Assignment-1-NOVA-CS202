@@ -19,10 +19,11 @@ public class Restaurant implements Comparable {
     private String longitude;
     private String latitude;
     private String phone;
-    private Image logo;
     private String city;
     private String state;
     private String zipcode;
+    private double distance = 0;
+    private Image logo;
 
     public Restaurant()
     {
@@ -53,6 +54,39 @@ public class Restaurant implements Comparable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(String lat, String lon)
+    {
+        Double latinput = Double.parseDouble(lat);
+        Double loninput = Double.parseDouble(lon);
+        Double latorig = Double.parseDouble(latitude);
+        Double lonorig = Double.parseDouble(longitude);
+
+
+        Double latDistance = toRad(latinput-latorig);
+        Double lonDistance = toRad(loninput-lonorig);
+
+        Double a = Math.sin(latDistance / 2) *
+                Math.sin(latDistance / 2) +
+                Math.cos(toRad(latinput)) *
+                        Math.cos(toRad(latorig)) *
+                        Math.sin(lonDistance / 2) *
+                        Math.sin(lonDistance / 2);
+
+        Double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        distance = 3959 * c;
+
+
+
+    }
+
+    private static Double toRad(Double value) {
+        return value * Math.PI / 180;
     }
 
     public String getAddress() {
@@ -91,12 +125,8 @@ public class Restaurant implements Comparable {
     }
 
     public String getPhone() {
-       String toreturn = phone.charAt(0) + phone.substring(2, phone.length()-2);
-       while (phone.length()<10)
-       {
-           toreturn = toreturn + "0";
-       }
-       return toreturn;
+        return phone.charAt(0) + phone.substring(2, phone.length()-2);
+
     }
 
 
