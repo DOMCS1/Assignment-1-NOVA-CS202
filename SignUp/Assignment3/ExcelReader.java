@@ -23,7 +23,15 @@ public class ExcelReader {
     public ExcelReader() throws IOException
     {
         try{
+<<<<<<< HEAD
             File file = new File("src/SignUp/Assignment3/Restaurant2.xls");
+=======
+<<<<<<< HEAD
+            File file = new File("src/SignUp/Assignment3/Restaurant2.xls");
+=======
+            File file = new File("C:\\Users\\praty\\IdeaProjects\\login\\src\\SignUp\\Assignment3\\Restaurant2.xls");
+>>>>>>> d0f82d39270e260a359e0e605ff6bdde18b6008b
+>>>>>>> 78b240e048604f4d4df5ef672119d5b91468172f
 
             fis = new FileInputStream(file);
 

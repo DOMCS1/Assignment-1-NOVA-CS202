@@ -81,7 +81,15 @@ if (contains(object))
             throw new IndexOutOfBoundsException("Index is out of range");
 
         E toReturn = data[index];
+<<<<<<< HEAD
         data[index] = object;
+=======
+<<<<<<< HEAD
+        data[index] = object;
+=======
+        data[index] = (E)object;
+>>>>>>> d0f82d39270e260a359e0e605ff6bdde18b6008b
+>>>>>>> 78b240e048604f4d4df5ef672119d5b91468172f
         return toReturn;
     }
 

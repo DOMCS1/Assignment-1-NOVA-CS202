@@ -100,7 +100,11 @@ public class BST<E> implements BSTinterface<E>
             result.addAll(extractValues(n.getRight()));
         }
 
+<<<<<<< HEAD
         result.add((E)(n.getInfo()));
+=======
+        result.add((E)n.getInfo());
+>>>>>>> d0f82d39270e260a359e0e605ff6bdde18b6008b
 
         return result;
     }
