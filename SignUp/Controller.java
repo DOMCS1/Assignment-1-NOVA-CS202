@@ -132,7 +132,7 @@ public class Controller {
                     Stage primaryStage = new Stage();
                     Parent root = FXMLLoader.load(getClass().getResource("/SignUp/Assignment3/RestaurantView.fxml"));
                     primaryStage.setTitle("Restaurant View");
-                    primaryStage.setScene(new Scene(root, 900, 800));
+                    primaryStage.setScene(new Scene(root, 1200, 800));
                     primaryStage.show();
 
 

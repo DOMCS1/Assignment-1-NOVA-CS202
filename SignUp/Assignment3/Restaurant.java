@@ -22,12 +22,14 @@ public class Restaurant implements Comparable {
     private String city;
     private String state;
     private String zipcode;
-    private double distance = 0;
+    private double distance;
+    private double distancefromDest;
     private Image logo;
 
     public Restaurant()
     {
-
+        distance = 100000.0;
+        distancefromDest = 100000;
     }
     public Restaurant(String name, String address, String longitude, String latitude, String phone, Image logo)
     {
@@ -60,16 +62,18 @@ public class Restaurant implements Comparable {
         return distance;
     }
 
-    public void setDistance(String lat, String lon)
-    {
+
+    public void setDistancefromDest(String lat, String lon) {
         Double latinput = Double.parseDouble(lat);
         Double loninput = Double.parseDouble(lon);
         Double latorig = Double.parseDouble(latitude);
         Double lonorig = Double.parseDouble(longitude);
 
-
         Double latDistance = toRad(latinput-latorig);
         Double lonDistance = toRad(loninput-lonorig);
+
+
+
 
         Double a = Math.sin(latDistance / 2) *
                 Math.sin(latDistance / 2) +
@@ -78,8 +82,32 @@ public class Restaurant implements Comparable {
                         Math.sin(lonDistance / 2) *
                         Math.sin(lonDistance / 2);
 
+
         Double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-        distance = 3959 * c;
+        this.distancefromDest = 3959 * c;
+
+
+    }
+
+    public void setDistance(String lat, String lon)
+    {
+    Double latinput = Double.parseDouble(lat);
+        Double loninput = Double.parseDouble(lon);
+        Double latorig = Double.parseDouble(latitude);
+        Double lonorig = Double.parseDouble(longitude);
+
+        Double latDistance = toRad(latinput-latorig);
+        Double lonDistance = toRad(loninput-lonorig);
+        Double a = Math.sin(latDistance / 2) *
+                Math.sin(latDistance / 2) +
+                Math.cos(toRad(latinput)) *
+                        Math.cos(toRad(latorig)) *
+                        Math.sin(lonDistance / 2) *
+                        Math.sin(lonDistance / 2);
+
+
+        Double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        this.distance = 3959 * c;
 
 
 
@@ -201,5 +229,9 @@ public class Restaurant implements Comparable {
     public String toString()
     {
         return name + state + address + zipcode + city;
+    }
+
+    public double getDistancefromDest() {
+        return distancefromDest;
     }
 }
